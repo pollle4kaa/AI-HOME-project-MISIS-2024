@@ -1,0 +1,583 @@
+<style>
+
+.instruction-container {
+
+  border-radius: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: start;
+
+  margin-bottom: -3px;
+
+}
+
+
+
+.header-section {
+
+  z-index: 10;
+
+  display: flex;
+
+  flex-direction: column;
+
+  font: 700 27px/1 Inter, sans-serif;
+
+  margin: -6px 0 0 16px;
+
+}
+
+
+
+.brand-name {
+
+  color: rgba(255, 91, 45, 1);
+
+  font-size: 27px;
+
+}
+
+
+
+.page-title {
+
+  color: #000;
+
+  font-size: 45px;
+
+  line-height: 2;
+
+}
+
+
+
+.content-wrapper {
+
+  width: 100%;
+
+  align-self: stretch;
+
+}
+
+
+
+.content-columns {
+
+  gap: 20px;
+
+  display: flex;
+
+}
+
+
+
+.main-content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: normal;
+
+  width: 57%;
+
+}
+
+
+
+.instruction-list {
+
+  display: flex;
+
+  flex-grow: 1;
+
+  flex-direction: column;
+
+  font: 500 30px Inter, sans-serif;
+
+}
+
+
+
+.telegram-icon {
+
+  aspect-ratio: 1;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  width: 58px;
+
+  margin-left: 16px;
+
+}
+
+
+
+.step-one {
+
+  color: #000;
+
+  margin: 36px 57px 0 0;
+
+}
+
+
+
+.step-two {
+
+  color: #000;
+
+  line-height: 45px;
+
+  align-self: start;
+
+  margin-top: 26px;
+
+}
+
+
+
+.command-note {
+
+  color: rgba(0, 0, 0, 0.69);
+
+  line-height: 45px;
+
+  margin: 23px 0 0 16px;
+
+}
+
+
+
+.blue-text {
+
+  color: rgb(47, 121, 160);
+
+}
+
+
+
+.step-three {
+
+  color: #000;
+
+  line-height: 45px;
+
+  margin: 39px 22px 0 0;
+
+}
+
+
+
+.format-section {
+
+  display: flex;
+
+  margin-top: 34px;
+
+  padding-left: 16px;
+
+  flex-direction: column;
+
+}
+
+
+
+.format-warning {
+
+  color: rgba(0, 0, 0, 0.55);
+
+  line-height: 45px;
+
+}
+
+
+
+.format-example {
+
+  color: #000;
+
+  line-height: 45px;
+
+  margin-top: 47px;
+
+}
+
+
+
+.error-text {
+
+  color: rgba(255, 91, 45, 1);
+
+}
+
+
+
+.step-four {
+
+  color: rgba(255, 91, 45, 1);
+
+  text-shadow: 0 1px 1px rgba(95, 41, 26, 1);
+
+  font-weight: 600;
+
+  align-self: start;
+
+  margin-top: 25px;
+
+}
+
+
+
+.image-column {
+
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: normal;
+
+  width: 43%;
+
+  margin-left: 20px;
+
+}
+
+
+
+.tutorial-image {
+
+  aspect-ratio: 0.73;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  width: 100%;
+
+  border-radius: 20px;
+
+  margin-top: 58px;
+
+}
+
+
+
+.divider {
+
+  aspect-ratio: 3.37;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  width: 100%;
+
+  margin-top: 20px;
+
+  min-height: 20px;
+
+  min-width: 20px;
+
+  overflow: hidden;
+
+}
+
+
+
+.footer {
+
+  display: flex;
+
+  gap: 4px;
+
+  color: #000;
+
+  text-align: center;
+
+  margin: 576px 0 0 16px;
+
+  font: 600 18px/1 Inter, sans-serif;
+
+}
+
+
+
+.github-icon {
+
+  aspect-ratio: 1;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  width: 46px;
+
+}
+
+
+
+.github-text {
+
+  margin: auto 0;
+
+}
+
+
+
+@media (max-width: 991px) {
+
+  .header-section {
+
+    max-width: 100%;
+
+  }
+
+  
+
+  .page-title {
+
+    max-width: 100%;
+
+    font-size: 40px;
+
+  }
+
+  
+
+  .content-wrapper {
+
+    max-width: 100%;
+
+  }
+
+  
+
+  .content-columns {
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 0;
+
+  }
+
+  
+
+  .main-content {
+
+    width: 100%;
+
+  }
+
+  
+
+  .instruction-list {
+
+    max-width: 100%;
+
+    margin-top: 40px;
+
+  }
+
+  
+
+  .telegram-icon {
+
+    margin-left: 10px;
+
+  }
+
+  
+
+  .step-one {
+
+    max-width: 100%;
+
+    margin-right: 10px;
+
+  }
+
+  
+
+  .step-two {
+
+    max-width: 100%;
+
+  }
+
+  
+
+  .command-note {
+
+    max-width: 100%;
+
+    margin-right: 9px;
+
+  }
+
+  
+
+  .step-three {
+
+    max-width: 100%;
+
+    margin-right: 10px;
+
+  }
+
+  
+
+  .format-section {
+
+    max-width: 100%;
+
+  }
+
+  
+
+  .format-warning {
+
+    max-width: 100%;
+
+    margin-right: 10px;
+
+  }
+
+  
+
+  .format-example {
+
+    max-width: 100%;
+
+    margin-top: 40px;
+
+  }
+
+  
+
+  .step-four {
+
+    max-width: 100%;
+
+  }
+
+  
+
+  .image-column {
+
+    width: 100%;
+
+  }
+
+  
+
+  .tutorial-image {
+
+    max-width: 100%;
+
+    margin-top: 40px;
+
+  }
+
+  
+
+  .footer {
+
+    margin: 40px 0 0 10px;
+
+  }
+
+}
+
+</style>
+
+
+
+<div class="instruction-container">
+
+  <div class="header-section">
+
+    <div class="brand-name">AI-HOME</div>
+
+    <div class="page-title">Инструкция по использованию telegram-бота</div>
+
+  </div>
+
+  
+
+  <div class="content-wrapper">
+
+    <div class="content-columns">
+
+      <div class="main-content">
+
+        <div class="instruction-list">
+
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/cd7638e8a73530d65e238d489ca88850830ceeb2800432504322b874249897e0?placeholderIfAbsent=true&apiKey=2779e2a5ff60407098aac2f764cd7ffb" class="telegram-icon" alt="Telegram Bot Icon" />
+
+          <div class="step-one">1. Перейдите по ссылке с главной страницы</div>
+
+          <div class="step-two">2. Для начала работы нажмите <span class="blue-text">/start</span> в приветственном сообщении или введите надпись с клавиатуры</div>
+
+          <div class="command-note">Обратите внимание, что при желании сбросить настройки или начать работу с ботом сначала, так же используйте команду <span class="blue-text">/start</span></div>
+
+          <div class="step-three">3. Далее бот будет запрашивать необходимые данные для формирования стоимости жилья (желаемый этаж, количество комнат, расстояние до парка и тд.)</div>
+
+          
+
+          <div class="format-section">
+
+            <div class="format-warning">Обратите внимание на формат ввода данных для корректной работы бота (если информация о характеристике запрашивается повторно, то, вероятно, был выполнен неверный ввод)</div>
+
+            <div class="format-example">
+
+              Например, вам необходимо ввести желаемый диапазон этажей.<br />
+
+              Ввод осуществляется двумя числами через пробел. Запись "1 5" означает, что вы рассматриваете этажи с 1-ого по 5-ый. Запись "2 2" означает, что вы рассматриваете только 2-й этаж.<br />
+
+              Записи "1-5" и "2" <span class="error-text">некорректно</span> воспримутся сервисом AI-HOME:(
+
+            </div>
+
+            <div class="step-four">4. Желаем приятного использования :)</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      
+
+      <div class="image-column">
+
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/900966ddf4bd764488c01d95ef54ab7c57af04e591bbd4cd648d18559c4addf7?placeholderIfAbsent=true&apiKey=2779e2a5ff60407098aac2f764cd7ffb" class="tutorial-image" alt="Telegram Bot Tutorial Screenshot" />
+
+      </div>
+
+    </div>
+
+  </div>
+
+  
+
+  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets%2F2779e2a5ff60407098aac2f764cd7ffb%2F31d1581f2ca14acb83c7367ddc2257d6" class="divider" alt="" />
+
+  
+
+  <div class="footer">
+
+    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6bb2b69a15f780290058b906cbdc613b645685c4441f239f948b3272e22e13ad?placeholderIfAbsent=true&apiKey=2779e2a5ff60407098aac2f764cd7ffb" class="github-icon" alt="GitHub Icon" />
+
+    <div class="github-text">Мы на github:</div>
+
+  </div>
+
+</div>
