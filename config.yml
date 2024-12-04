@@ -1,0 +1,10 @@
+data_path: 'data.csv'
+test_size: 0.3
+random_state: 42
+scaling: True
+model_params:
+  random_forest:
+    max_depth: 12
+    n_estimators: 1000
+  knn:
+    n_neighbors: 6
