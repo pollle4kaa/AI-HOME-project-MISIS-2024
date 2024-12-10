@@ -1,10 +1,11 @@
-data_path: 'offers_new.csv'
-test_size: 0.3
-random_state: 42
-scaling: True
-model_params:
+data:
+  path: "drive/MyDrive/Colab Notebooks/offers_new.csv"
+
+model:
   random_forest:
-    max_depth: 12
     n_estimators: 1000
+    max_depth: 12
+    random_state: 42
   knn:
     n_neighbors: 6
+
