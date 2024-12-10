@@ -1,24 +1,42 @@
-from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.neighbors import KNeighborsRegressor
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
-from preprocessing import load_and_preprocess_data
+import pickle
+import yaml
+import pandas as pd
 
-def train_model(config):
-    df = load_and_preprocess_data(config)
-    X = df.drop(columns=['price']).values
-    y = df['price'].values
+# Загрузка конфигурации
+with open("config.yml", "r") as file:
+    config = yaml.safe_load(file)
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=config['test_size'], random_state=config['random_state'])
+def train_model(data, target_column):
+    X = data.drop(columns=[target_column])
+    y = data[target_column]
 
-    # Обучение модели RandomForest
-    rf = RandomForestRegressor(**config['model_params']['random_forest'])
-    rf.fit(X_train, y_train)
-    y_pred = rf.predict(X_test)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=config["model"]["random_forest"]["random_state"])
 
-    # Метрики
+    # Обучение модели
+    model = RandomForestRegressor(
+        n_estimators=config["model"]["random_forest"]["n_estimators"],
+        max_depth=config["model"]["random_forest"]["max_depth"],
+        random_state=config["model"]["random_forest"]["random_state"]
+    )
+    model.fit(X_train, y_train)
+
+    # Оценка модели
+    y_pred = model.predict(X_test)
     mse = mean_squared_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
 
-    print(f'MSE: {mse}, R2: {r2}')
-    return rf
+    print(f"MSE: {mse}")
+    print(f"R2: {r2}")
+
+    # Сохранение модели
+    with open("pipeline/finalized_model.sav", "wb") as file:
+        pickle.dump(model, file)
+
+    return model
+
+# Использование
+df = pd.read_csv(config["data"]["path"])
+trained_model = train_model(df, target_column="price")
