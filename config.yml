@@ -1,0 +1,11 @@
+data:
+  path: "offers_new.csv"
+
+model:
+  random_forest:
+    n_estimators: 1000
+    max_depth: 12
+    random_state: 42
+  knn:
+    n_neighbors: 6
+
